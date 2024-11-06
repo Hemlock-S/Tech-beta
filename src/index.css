@@ -42,6 +42,7 @@ html, body{
     height: calc(100vh - 5rem);
     width: 500vw;
     display: flex;
+    transition: 1s ease;
 }
 
 .slide{

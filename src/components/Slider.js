@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+
 const data = [
   {
     id: 1,
@@ -27,15 +30,53 @@ const data = [
 ];
 
 const Slider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      currentSlide === 0 ? data.length - 1 : (currentSlide) => currentSlide - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide(
+      currentSlide === data.length - 1 ? 0 : (currentSlide) => currentSlide + 1
+    );
+  };
+
   return (
-    <div className="slider">
-      {data.map((image) => (
-        <div
-          className="slide"
-          key={image.id}
-          style={{ backgroundImage: `url(${image.src})`}}
-        ></div>
-      ))}
+    <div className="frame relative">
+      <div
+        className="slider"
+        style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
+      >
+        {data.map((image) => (
+          <div
+            className="slide"
+            key={image.id}
+            style={{ backgroundImage: `url(${image.src})` }}
+          ></div>
+        ))}
+      </div>
+      {/* <div className="btns absolute z-[1] text-white text-2xl flex gap-10 bottom-20 w-screen justify-center"> */}
+      <div className="btns absolute left-0 right-0 mx-auto w-fit z-[1] text-white text-2xl flex gap-10 bottom-20">
+          <button
+            onClick={prevSlide}
+            className="prev-btn bg-white/40 h-14 w-20 backdrop-blur-xl flex justify-center items-center hover:bg-white/90 hover:text-black duration-300"
+          >
+            <span>
+              <BsArrowLeft />
+            </span>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="next-btn bg-white/40 h-14 w-20 backdrop-blur-xl flex justify-center items-center hover:bg-white/90 hover:text-black duration-300"
+          >
+            <span>
+              <BsArrowRight />
+            </span>
+          </button>
+        </div>
     </div>
   );
 };
