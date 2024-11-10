@@ -14,7 +14,7 @@ const Navbar = () => {
           <Link to="/cart">
               <span className="cart-icon relative">
                 <BsCart3 />
-              <span className="cart-counter absolute -top-3 -right-4 text-xs rounded-full bg-orange-600 h-5 w-5 flex items-center justify-center">10</span>
+              <span className="cart-counter absolute z-[1] -top-3 -right-4 text-xs rounded-full bg-orange-600 h-5 w-5 flex items-center justify-center">10</span>
             </span>
           </Link>
         </div>
