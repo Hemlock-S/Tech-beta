@@ -13,6 +13,11 @@ body{
     font-family: "Poppins", sans-serif;
 }
 
+::selection{
+    background-color: #f97316;
+    color: white;
+}
+
 /* Utilities */
 .space-font{
     font-family: "Space Grotesk", sans-serif;

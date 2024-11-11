@@ -23,7 +23,7 @@ const data = [
   },
   {
     id: 3,
-    src: "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    src: "/headphone.jpg",
     alt: "Top View Photo of Black Wireless Headphones",
     headline: 'Enhance your listening experience',
     body: 'Take your music, movies, and more to the next level with our headphone. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designes for all-day wear.',
