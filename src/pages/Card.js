@@ -85,7 +85,7 @@ const Cart = () => {
         </div>
         <p className='text-gray-400'>Taxes and shipping costs are calculated at the checkout</p>
        <button className='checkout bg-sky-500 w-full py-3 uppercase font-medium text-sky-50 tracking-widest hover:bg-sky-600 duration-300'>Checkout</button>
-       <button className='continue flex gap-3 items-center uppercase text-sky-500 font-medium tracking-widest'><FaArrowLeftLong />Continue</button>
+       <button className='continue flex gap-3 items-center uppercase text-sky-400 hover:text-sky-500 font-medium tracking-widest'><FaArrowLeftLong />Continue</button>
        </div>
       </div>
     </div>

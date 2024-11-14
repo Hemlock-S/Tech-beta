@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
-const Cart = ({ product }) => {
+const Card = ({ product }) => {
   
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
@@ -40,4 +40,4 @@ const Cart = ({ product }) => {
   );
 };
 
-export default Cart;
+export default Card;
