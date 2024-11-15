@@ -24,10 +24,9 @@ const cartSlice = createSlice({
                 // add to cart ==> cartQuantity object add korte hbe api te
                 const assemblledItem = {...action.payload, cartQuantity: 1};
                 state.cartItems.push(assemblledItem);
-
-                // add to localstorage
-                localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
             }
+            // add to localstorage
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
         },
 
         // removeFromCart function 
@@ -37,6 +36,33 @@ const cartSlice = createSlice({
             state.cartItems = updatedCartItems;
             // update local storage
             localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
-        }
+        },
+
+        // clearCart function
+        clearCart(state, action){
+            state.cartItems = [];
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+        },
+
+
+        // decreaseCart function
+        decreaseCart(state, action){
+            const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
+
+            // if exist:
+            if(state.cartItems[itemIndex].cartQuantity > 1){
+                state.cartItems[itemIndex].cartQuantity -= 1;
+            }
+            else if(state.cartItems[itemIndex].cartQuantity === 1){
+                const updatedCartItems = state.cartItems.filter(item => item.id !== action.payload.id);
+                state.cartItems = updatedCartItems;
+            }
+            // update local storage
+            localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+        },
     },
-})
+});
+
+export const { addToCart, removeFromCart, clearCart, decreaseCart } = cartSlice.actions;
+export default cartSlice.reducer; 
+

@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import Cart from "../components/Cart";
+import Card from "../components/Card";
 import { useSelector } from "react-redux";
 
 const Products = () => {
@@ -40,9 +40,9 @@ const Products = () => {
       }
         {data?.products?.length > 0
           ? data.products.map((product) => (
-              <Cart key={product.id} product={product}/>
+              <Card key={product.id} product={product}/>
             ))
-          :  <p className="min-h-screen col-span-full text-center">No products available</p>} 
+          :  !{status} && <p className="min-h-screen col-span-full text-center">No products available</p>} 
       </div>
     </div>
   );
