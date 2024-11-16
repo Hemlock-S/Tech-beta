@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
@@ -12,6 +14,7 @@ const App = () => {
     <>
       <div className="app min-h-screen bg-gray-50 text-gray-700 text-lg">
         <Navbar/>
+        <ToastContainer />
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/products' element={<Products/>}/>

@@ -8,3 +8,5 @@ imagebb --> image upload
 
 axios --> powerfull library for fetching
 redux thunk --> middleware[additional feature]
+
+react totastify[choosen], react hot-toast
